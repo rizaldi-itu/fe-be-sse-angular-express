@@ -15,7 +15,6 @@ import { HelloWorldComponent } from './hello-world';
 })
 export class AppComponent {
   title = 'first-app';
-
   value: string = 'adaw';
   res: any;
   posts: any;
@@ -30,7 +29,6 @@ export class AppComponent {
   // request every 2 second
   async ngOnInit() {
     this.hello.setValue(this.value);
-    console.log(this.value);
 
     this.subscription = timer(0, 2000)
       .pipe(switchMap(() => this.service.getPosts()))
@@ -38,9 +36,7 @@ export class AppComponent {
         this.res = result;
         this.value = this.res.datetime;
         this.value = this.value.substring(11, 19);
-        console.log(this.value);
         this.hello.setValue(this.value);
-        // console.log(this.hello.getValue());
       });
   }
 
