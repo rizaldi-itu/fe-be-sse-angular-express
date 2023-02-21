@@ -44,26 +44,6 @@ export class AppComponent {
       });
   }
 
-  // ngOnInit() {
-  //   const eventSource = new EventSource(
-  //     'http://localhost:3000/checkAllBookSendToFrontEnd'
-  //   );
-
-  //   eventSource.onmessage = (event) => {
-  //     // console.log(event);
-  //     // this.res = JSON.parse(event.data);
-  //     // console.log(this.res.data);
-  //     // this.value = JSON.parse(event.data).data[0]['title'];
-  //     // console.log(this.res.data[0]['title']);
-  //     // console.log(this.res.data[0]['genre']);
-  //     this.res = JSON.parse(event.data);
-  //     this.ngZone.run(() => {
-  //       // this.value = this.res.data[0]['title'];
-  //       this.value = this.res.data;
-  //     });
-  //   };
-  // }
-
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }
